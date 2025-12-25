@@ -1,0 +1,26 @@
+1. install requirement, package.json
+
+2. set .env and npx auth secret (generate secret) or openssl rand -base64
+
+3. set prisma/schema.prisma
+
+4. set @prisma/client: npx prisma generate (generate client) then npx prisma db push
+
+5. code
+    - src/lib/prisma.ts
+    - src/lib/hash.ts
+    - src/lib/auth.ts
+    - src/app/api/auth/[...nextauth]/route.ts
+    - src/actions/auth.ts
+    - src/middleware.ts
+    - src/app/(auth)/login/page.tsx
+    - src/app/(auth)/register/page.tsx
+    - src/app/dashboard/page.tsx
+    - src/app/page.tsx
+    - src/app/layout.tsx                    <- this
+    - src/app/globals.css
+    - tsconfig.json
+    - tailwind.config.ts
+    - postcss.config.mjs
+
+6. Run the application
