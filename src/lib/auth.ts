@@ -39,6 +39,11 @@ export const authOptions: NextAuthConfig = {
           where: { email },
         });
 
+         // 🔒 GUARD PERTAMA: USER TIDAK ADA
+          if (!user) {
+            return null;
+          }
+
         const isValid = await verifyPassword(password, user.password);
 
         if (!isValid) {
